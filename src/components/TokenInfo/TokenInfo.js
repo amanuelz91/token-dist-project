@@ -16,7 +16,8 @@ super(props);
     deployedContract: null,
     deployedTokenInstance: null,
     tokenInfoArray: null,
-    dataVizService:[]
+    dataVizService:[],
+    tokenContractaddress: null
  };
 
 
@@ -89,10 +90,10 @@ onChange(e) {
     //   var address = "0xF8E2D9Daeb7Dd6D7c68De96b2f03974c423c3F64";
     //   this.state.web3.personal.unlockAccount("0xf952570dbbeb5ced1d9885f2b5649f42d2b606d6", "ThisPasswordIsFake12345", 100);
     //  var address = "0x028761de2f9A32DF6329C28C6B4F4d6e2BA36A44"; //Rinkeby Deployed
-       var address = "0x028761de2f9A32DF6329C28C6B4F4d6e2BA36A44";
+       var address = this.state.tokenContractaddress;
        // window.web3.eth.defaultAccount = this.state.web3.eth.accounts[0];
        this.setState({deployedContract: this.state.web3.eth.contract(abi)});
-       this.setState({deployedTokenInstance: this.state.deployedContract.at(address)});
+       this.setState({deployedTokenInstance: this.state.deployedContract.at(this.state.tokenContractaddress)});
        var toAddress_ = String(parsedTokenInfo[0][0]);
        console.log("PARSED TOKEN INFO: "+ toAddress_);
 
@@ -107,6 +108,7 @@ onChange(e) {
     }
 
     componentDidMount(){
+        this.setState({tokenContractaddress: "0x028761de2f9A32DF6329C28C6B4F4d6e2BA36A44" });
         var newWeb3 = new window.Web3(new window.Web3.providers.HttpProvider('http://127.0.0.1:8545'));
        //var newWeb3 = new window.Web3(new window.Web3.providers.HttpProvider('http://127.0.0.0:8545'));
       // var newWeb3 = window.web3;
@@ -168,7 +170,7 @@ onChange(e) {
       }
 
     filterWatch(){
-          var address_ = "0x028761de2f9A32DF6329C28C6B4F4d6e2BA36A44";
+          var address_ = this.state.tokenContractaddress;
           // var block = this.state.web3.eth.getBlock(result, true);
           var options = {
             // fromBlock: block,
