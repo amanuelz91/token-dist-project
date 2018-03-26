@@ -4,5 +4,59 @@
 }
 
 .tokenForm{
-  margin-top: 150px;
+  margin-top: 10px;
+}
+
+.formDiv{
+
+}
+
+.DataUL{
+  list-style-type: none;
+  padding-top: 6px;
+  padding-right: 45px;
+}
+
+.AccountUL{
+  list-style-type: none;
+  padding-top: 6px;
+  color: black;
+}
+
+.DataLI{
+  height: 250px;
+  padding: 0px;
+  text-align: center;
+  overflow-y: scroll;
+  background: aliceblue;
+
+}
+
+.AccountOL{
+  padding: 0px;
+}
+
+.ConsoleLi{
+  list-style-type: none;
+  display: inline-grid;
+  padding: 0px;
+  background: lightsteelblue;
+}
+
+.TokenFormInput{
+
+}
+
+.MetricsUL{
+  list-style-type: none;
+  padding: 10px;
+}
+
+.MetricsLi{
+  padding: 10px;
+}
+
+.AccountLiDiv{
+  background: beige;
+  font: -webkit-control;
 }
